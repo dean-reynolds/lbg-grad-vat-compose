@@ -8,7 +8,10 @@ services:
                 published: 8080
     front-a:
         image: deanreynolds/lbg-grad-compose-front-a
-        build: ./frontend-1
+        build: 
+            context: ./frontend-1
+            args:
+                SERVER_URL: $(SERVER_URL)
         ports:
             -   target: 80
                 published: 80
@@ -16,6 +19,8 @@ services:
         image: deanreynolds/lbg-grad-compose-front-b
         build:
             context: ./frontend-2
+            args:
+                SERVER_URL: $(SERVER_URL)
         ports:
             -   target: 80
                 published: 81
