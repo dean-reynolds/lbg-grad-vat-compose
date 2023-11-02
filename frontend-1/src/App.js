@@ -47,7 +47,7 @@ function App() {
       VatRate: vatRate
     }
     
-    req.open('POST', 'http://' + SERVER_URL + '/calc', true)
+    req.open('POST', 'http://' + '35.210.98.33' + '/calc', true)
     req.setRequestHeader('Content-Type', 'application/json')
     req.send(JSON.stringify(json))
 
